@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Countdown Timer",
-  description: "Countdown to May 22nd, 2025",
+  description: "Countdown to PA SOCIAL!! :O",
 };
 
 export default function RootLayout({
