@@ -48,7 +48,7 @@ const CountdownTimer = () => {
       >
         Go to Form Page
       </button>
-      <h1 className="text-5xl font-bold mb-16 text-white text-center">Countdown to May 22nd, 2025</h1>
+      <h1 className="text-5xl font-bold mb-16 text-white text-center">Countdown to PA SOCIAL!! :O</h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
           <div className="text-6xl font-bold text-white mb-2">{timeLeft.days}</div>
