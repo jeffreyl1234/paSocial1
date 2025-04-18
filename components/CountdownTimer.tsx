@@ -14,13 +14,10 @@ const CountdownTimer = () => {
 
   useEffect(() => {
     const targetDate = new Date('2025-05-22T00:00:00');
-    console.log('Target Date:', targetDate);
-    console.log('Current Date:', new Date());
 
     const calculateTimeLeft = () => {
       const now = new Date();
       const difference = targetDate.getTime() - now.getTime();
-      console.log('Time difference (ms):', difference);
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -28,16 +25,12 @@ const CountdownTimer = () => {
         const minutes = Math.floor((difference / 1000 / 60) % 60);
         const seconds = Math.floor((difference / 1000) % 60);
         
-        console.log('Calculated time:', { days, hours, minutes, seconds });
-        
         setTimeLeft({
           days,
           hours,
           minutes,
           seconds
         });
-      } else {
-        console.log('Countdown has ended');
       }
     };
 
@@ -48,30 +41,30 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-500 to-purple-600 text-white">
+    <div className="min-h-screen bg-gradient-to-r from-pink-400 to-pink-500 flex flex-col items-center justify-center p-4">
       <button
         onClick={() => router.push('/form-page')}
-        className="mb-8 bg-white text-blue-600 px-6 py-3 rounded-lg text-xl font-bold hover:bg-blue-100 transition-colors"
+        className="mb-12 bg-white/90 text-pink-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-white transition-all shadow-lg"
       >
         Go to Form Page
       </button>
-      <h1 className="text-4xl font-bold mb-8">Countdown to May 22nd, 2025</h1>
-      <div className="grid grid-cols-4 gap-4 text-center">
-        <div className="bg-white/20 p-6 rounded-lg">
-          <div className="text-4xl font-bold">{timeLeft.days}</div>
-          <div className="text-sm">Days</div>
+      <h1 className="text-5xl font-bold mb-16 text-white text-center">Countdown to May 22nd, 2025</h1>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+          <div className="text-6xl font-bold text-white mb-2">{timeLeft.days}</div>
+          <div className="text-lg text-white/90 font-medium">Days</div>
         </div>
-        <div className="bg-white/20 p-6 rounded-lg">
-          <div className="text-4xl font-bold">{timeLeft.hours}</div>
-          <div className="text-sm">Hours</div>
+        <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+          <div className="text-6xl font-bold text-white mb-2">{timeLeft.hours}</div>
+          <div className="text-lg text-white/90 font-medium">Hours</div>
         </div>
-        <div className="bg-white/20 p-6 rounded-lg">
-          <div className="text-4xl font-bold">{timeLeft.minutes}</div>
-          <div className="text-sm">Minutes</div>
+        <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+          <div className="text-6xl font-bold text-white mb-2">{timeLeft.minutes}</div>
+          <div className="text-lg text-white/90 font-medium">Minutes</div>
         </div>
-        <div className="bg-white/20 p-6 rounded-lg">
-          <div className="text-4xl font-bold">{timeLeft.seconds}</div>
-          <div className="text-sm">Seconds</div>
+        <div className="bg-white/20 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+          <div className="text-6xl font-bold text-white mb-2">{timeLeft.seconds}</div>
+          <div className="text-lg text-white/90 font-medium">Seconds</div>
         </div>
       </div>
     </div>
