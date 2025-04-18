@@ -18,7 +18,7 @@ export default function FormPage() {
             className="rounded-lg shadow-lg"
           />
         </div>
-        <h1 className="text-4xl font-bold mb-8 text-white">Welcome to the Form Page</h1>
+        <h1 className="text-4xl font-bold mb-8 text-white">GET HYPED!!</h1>
         <div className="space-y-6">
           <button
             onClick={() => window.location.href = 'https://forms.gle/xgGXP4pv2WM7moFW8'}
