@@ -74,7 +74,7 @@ export default function BrothersPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-4xl font-bold text-center mb-12 text-black">Meet the Brothers</h1>
+      <h1 className="text-4xl font-bold text-center mb-12 text-black">Meet the Pledges</h1>
       
       {/* Grid of headshots */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">

@@ -49,7 +49,7 @@ export default function Navigation() {
                 pathname === '/brothers' ? 'text-blue-600' : 'text-black hover:text-blue-500'
               }`}
             >
-              Brothers
+              Pledges
             </Link>
           </div>
         </div>
