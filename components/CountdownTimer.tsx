@@ -13,7 +13,8 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-05-22T00:00:00');
+    // May 17, 2025 at 6:00 PM PST
+    const targetDate = new Date('2025-05-17T18:00:00-07:00');
 
     const calculateTimeLeft = () => {
       const now = new Date();
