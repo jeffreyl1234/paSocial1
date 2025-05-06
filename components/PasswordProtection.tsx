@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import confetti from 'canvas-confetti';
 
-const PASSWORD = 'etachi2024'; // You can change this to your desired password
+const PASSWORD = 'bowserneck'; // Updated password
 
 export default function PasswordProtection({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
