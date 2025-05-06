@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function PlayPage() {
   const [score, setScore] = useState(0);
@@ -43,7 +44,7 @@ export default function PlayPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-100">
-      <h1 className="text-4xl font-bold mb-8 text-black">Catch the Eta Chi!</h1>
+      <h1 className="text-4xl font-bold mb-8 text-black">Catch the Mr. Patel!</h1>
       
       {!isPlaying && timeLeft === 30 && (
         <button
@@ -83,20 +84,17 @@ export default function PlayPage() {
             top: position.y,
             width: '100px',
             height: '100px',
-            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: '1.5rem',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
           }}
         >
-          Eta Chi
+          <Image
+            src="/patel.png"
+            alt="Patel"
+            width={100}
+            height={100}
+            className="rounded-full"
+          />
         </div>
       )}
     </div>
   );
-} 
+}

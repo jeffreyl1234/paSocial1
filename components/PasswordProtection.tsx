@@ -1,14 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
 const PASSWORD = 'bowserneck'; // Updated password
+const EXPIRATION_TIME = 60 * 60 * 1000; // 1 hour in milliseconds
 
 export default function PasswordProtection({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    // Check if there's a stored authentication with timestamp
+    const storedAuth = localStorage.getItem('auth');
+    if (storedAuth) {
+      const { timestamp } = JSON.parse(storedAuth);
+      const now = Date.now();
+      if (now - timestamp < EXPIRATION_TIME) {
+        setIsAuthenticated(true);
+      } else {
+        localStorage.removeItem('auth');
+      }
+    }
+  }, []);
 
   const triggerConfetti = () => {
     const duration = 3 * 1000;
@@ -47,6 +62,10 @@ export default function PasswordProtection({ children }: { children: React.React
       setIsAuthenticated(true);
       setError('');
       triggerConfetti();
+      // Store authentication with timestamp
+      localStorage.setItem('auth', JSON.stringify({
+        timestamp: Date.now()
+      }));
     } else {
       setError('Incorrect password');
     }
